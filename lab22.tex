@@ -1,0 +1,137 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+
+%Packets
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+
+%Counters
+\setcounter{page}{172}
+\setcounter{equation}{10}
+
+%Size with geometry
+\geometry{a4paper,top=3cm,bottom=2cm,left=2.55cm,right=2.55cm}
+
+\setlength{\parskip}{0.1cm}%отступ между интервалами
+\parindent=37pt%отступ слева
+
+%Header
+\pagestyle{fancy} 
+\fancyhead[RE]{\bfseries [гл. v} 
+\fancyhead[LO]{\bfseries\S 2 ]} 
+\fancyhead[CE]{\footnotesize ОБЩАЯ ТЕОРИЯ ЛИНЕЙНЫХ ДИФФЕРЕНЦИАЛЬНЫХ УРАВНЕНИЙ} 
+\fancyhead[CO]{\footnotesize ОБЩАЯ ТЕОРИЯ ЛИНЕЙНОГО ОДНОРОДНОГО УРАВНЕНИЯ} 
+\fancyhead[LE,RO]{\thepage} 
+\fancyfoot{} 
+\renewcommand{\headrulewidth}{0pt}
+
+%Start
+\begin{document}
+\fontsize{14pt}{16pt}\selectfont
+
+\noindent замечая, что все показатели $>0$, получим переходом к пределу при\linebreak $x \to 0$, что необходимо $a_{1}=0$. Поэтому тождество может иметь только такой вид:
+$$
+a_2x^{k_2}+a_3x^{k_3}+\cdots +a_n{}^{k_n}=0.
+$$
+Повторяя последовательно то же рассуждение, получим: $a_2=0$,\linebreak $a_3=0$, \ldots, $a_n=0$, т.е. противоречие с предположением, что не все $a_i$\linebreak равны нулю; это противоречие и доказывает наше утверждение (анало\-гичное рассуждение можно было бы применить и к предыдущему\linebreak примеру).
+
+4) Примером линейно-независимой системы являются функции: $\varphi _1=\sin ^2x$, $\varphi _2=\cos ^2x$, $\varphi _3=1$. Действительно, полагая \mbox{$\alpha _1=1,\: \alpha _2=1,$} $\alpha _3=-1$, получаем тождество (для $-\infty<x<\infty$):
+\begin{displaymath}
+\sin^2x+\cos^2x-1=0.
+\end{displaymath}
+
+{\bfseries 3.} Пусть мы имеем {\boldmath $n$} функций от $x$, имеющих непрерывные про\-изводные до $n-1$-го порядка:
+\begin{displaymath}
+y_1,\; \; y_2,\; \; \ldots,\; \; y_n
+\end{displaymath}
+
+Определитель:
+\begin{equation}\label{f1}
+\tag{$10$}
+\mathit W {[} y_1,\; \; y_2,\; \; \ldots,\; \; y_n {]} \equiv \mathit W (x) \equiv
+%\left( "(" - это ограничитель для правильного размера разграничителя \right) {array}{cc} - 2 столбца
+\begin{vmatrix}
+y_1, & y_2, & {} & \cdots , & y_n, \\
+y_1', & y_2', & {} & \cdots , & y_n', \\
+\hdotsfor[3.7]{5} \\
+y_1^{(n-1)}, & y_2^{(n-1)}, & {} & \cdots , & y_n^{(n-1)} \\
+\end{vmatrix}
+\end{equation}
+\mbox{называется {\slshape детерминантом Вронского} этих функций. Легко доказывается} следующая теорема:
+
+Т\,е\,о\,р\,е\,м\,а 3. Если функции $y_1, \; y_2, \; \ldots, \; y_n$ {\itshape линейно \mbox{зависимы, то} детерминант Вронского тождественно равен нулю.}
+
+Пусть функции $y_1, \; y_2, \; \ldots, \; y_n$ линейно зависимы, т. е. \mbox{существует} тождественное соотношение
+\begin{equation}\label{f2}
+a_1y_1+a_2y_2+\ldots +a_ny_n=0,
+\end{equation}
+где не все $a_i$ равны нулю. Без ограничения общности мы можем допу\-стить, что $a_n\ne 0$ (иначе мы изменили бы нумерацию функций). Разре\-шаем соотношение \eqref{f2} относительно $y_n$, получаем тождество:
+\begin{equation}\label{f3}
+\tag{$11'$}
+\left.
+\begin{aligned}
+y_n=\beta_1y_1+\beta_2y_2+\ldots+\beta_{n-1}y_{n-1},\:\:\\
+\left( \beta_i=-\frac{a_i}{a_n},\; i=1,\; 2,\; \ldots ,\; n-1 \right).\:\:\\
+\end{aligned}
+\right\rbrace
+\end{equation}
+Из тождества \eqref{f3} дифференцированием по $x$ получаем:
+\begin{equation}\label{f4}
+\tag{$11''$}
+\left.
+\begin{matrix}
+y_n'=\beta_1y_1'+\beta_2y_2'+\ldots+\beta_{n-1}y_{n-1}',\:\:\\
+\hdotsfor[4]{1}\;\;\\
+y_n^{(n-1)}=\beta_1y_1^{(n-1)}+\beta_2y_2^{(n-1)}+\ldots+\beta_{n-1}y_{n-1}^{(n-1)}.\:\:\\
+\end{matrix}
+\right\rbrace%скобка
+\end{equation}
+Умножаем в выражении \eqref{f1} первый столбец на $-\beta_1$, второй — на\linebreak $-\beta_2$, \ldots, $(n-1)$-й на $-\beta_{n-1}$ и прибавляем к последнему; величина детерминанта $\mathit{W}$ не изменится, но в силу соотношений \eqref{f3} и \eqref{f4}\linebreak последний столбец нового детерминанта будет состоять из нулей, \mbox{откуда} следует, что $\mathit{W}\equiv0$, а это и требовалось доказать.
+
+Если $y_1, \; y_2,\; \ldots,\; y_n$ суть ч\,а\,с\,т\,н\,ы\,е р\,е\,ш\,е\,н\,и\,я однородного урав\-нения ($3'$), то справедлива обратная, притом более сильная \mbox{теорема:}
+
+Т\,е\,о\,р\,е\,м\,а 4. {\itshape Если решения $y_1,\; y_2,\; \ldots,\; y_n$ линейно независимы\linebreak{\upshape[в интервале (2)], то $\mathit{W}$ [$y_1,\, y_2,\, \ldots,\, y_n$]} \mbox{не обращается в нуль ни в одной} точке рассматриваемого интервала.}
+
+Допустим противное: пусть $\mathit{W}(x_0)=0$, $a<x_0<b$. Обозначим величины $y_i$ при $x=x_0$ через $y_{i0}$ и значения $y_i{}^{(k)}(x_0)$ — через $y_{i0}{}^
+{(k)}$ и составим систему уравнений:
+\begin{equation}\label{f5}
+\tag{$12$}
+\left.
+\begin{matrix}
+& C_1y_{10}+C_2y_{20}+\ldots+C_ny_{n0}=0,\:\:\\
+& C_1y_{10}{}'+C_2y_{20}{}'+\ldots+C_ny_{n}{}_0'=0,\:\:\:\\
+& \hdotsfor[4]{1}\:\:\:\:\\
+C_1y_{10}{}^{(n-1)}\:\:+ & \!\!\!C_2y_{20}{}^{(n-1)}+\ldots+C_ny_{n0}{}^{(n-1)}=0.\\
+\end{matrix}
+\right\rbrace%скобка
+\end{equation}
+Рассматривая в уравнениях \eqref{f5} величины $C_1,\; C_2,\; \ldots,\; C_n$ как неизвест\-ные, мы получим для детерминанта системы \eqref{f5} значение $\mathit{W}(x_0)=0$. Следовательно, однородная система \eqref{f5} из $n$ уравнений с $n$ неизвест\-ными имеет систему решений $C_1,\; C_2,\; \ldots,\; C_n$, причём не все $C_i$ равны нулю. Составим функцию
+\begin{equation}\label{f6}
+\tag{$8'$}
+\widetilde{y}(x)=C_1y_{1}+C_2y_{2}+\ldots+C_ny_{n};
+\end{equation}
+в силу следствия 1 теорем 1 и 2 она является решением уравнения ($3'$); в силу условий \eqref{f5} мы имеем при $x=x_0$
+\begin{equation}\label{f7}
+\tag{$12'$}
+\begin{matrix}
+\widetilde{y}(x_0)=0, &
+\widetilde{y}'(x_0)=0, &
+\ldots, &
+\widetilde{y}^{(n-1)}(x_0)=0.
+\end{matrix}
+\end{equation}
+Начальные условия \eqref{f7}, по теореме существования, определяют един\-ственное решение уравнения ($3'$); но таким решением, очевидно, является тривиальное решение $y=0$, следовательно, $\widetilde{y}(x_0)\equiv0$ (в интервале $a<x<b$), и мы получаем из равенства \eqref{f6}:
+\begin{displaymath}
+C_1y_{1}+C_2y_{2}+\ldots+C_ny_{n}=0
+\end{displaymath}
+для всякого $x$ в интервале ($2$), причём не все $C_i$ равны нулю, т.е. функции $y_1, \; y_2, \; \ldots, \; y_n$ линейно зависимы против предположения. Полученное противоречие доказывает теорему.
+
+Теоремы 3 и 4 можно объединить в следующей формулировке:
+{\itshape детерминант Вронского, составленный для системы $n$ решений линей\-ного уравнения $n$-го порядка {\upshape ($3'$)} или тождественно равен нулю или\linebreak не обращается в нуль ни в одной точке того интервала, где коэфи\-циенты уравнения непрерывны.}
+
+\end{document}
